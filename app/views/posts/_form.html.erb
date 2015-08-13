@@ -21,6 +21,10 @@
       <%= f.text_area :body, class: "form-control" %>
     </div>
     <div class="form-group">
+      <%= f.label :tag_list, "Tags - Separate tags with a comma" %>
+      <%= f.text_field :tag_list, class: "form-control" %>
+    </div>
+    <div class="form-group">
       <%= f.submit "Submit", :class => "btn btn-primary" %>
     </div>
   <% end %>
