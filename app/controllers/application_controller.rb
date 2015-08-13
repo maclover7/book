@@ -8,5 +8,8 @@ class ApplicationController < ActionController::Base
   def configure_devise_params
     devise_parameter_sanitizer.for(:sign_up) << :name
     devise_parameter_sanitizer.for(:account_update) << :name
+    devise_parameter_sanitizer.for(:accept_invitation) do |u|
+      u.permit(:name, :password, :password_confirmation, :invitation_token)
+    end
   end
 end

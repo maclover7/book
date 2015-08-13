@@ -23,6 +23,11 @@
               <span class="glyphicon glyphicon-plus"></span> New Post
             <% end %>
           </li>
+          <li>
+            <%= link_to new_user_invitation_path do %>
+              <span class="glyphicon glyphicon-plus"></span> New Invitation
+            <% end %>
+          </li>
           <li> <%= link_to "Account Settings", edit_user_registration_path %> </li>
           <li> <%= link_to "Log out", destroy_user_session_path, method: :delete %> </li>
         <% else %>
