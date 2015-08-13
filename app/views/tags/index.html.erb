@@ -1,9 +1,30 @@
-<h1>Tags</h1>
+<h1>All Tags</h1>
 
-<ul>
-  <% @tags.each do |tag| %>
-    <li>
-      <%= link_to tag.name, tag_path(tag) %>
-    </li>
-  <% end %>
-</ul>
+<% @tags.each_slice(4) do |tags| %>
+  <div class="row">
+    <% tags.each do |tag| %>
+
+      <div class="col-md-3">
+        <div class="panel panel-default">
+          <div class="panel-heading"><h3><b><%= link_to tag.name, tag_path(tag) %></b></h3></div>
+          <div class="panel-body">
+
+            <% if Post.tagged_with(tag.name).any? %>
+              <ul>
+                <% Post.tagged_with(tag.name).each do |post| %>
+                  <li>
+                    <%= link_to post.name, post_path(post) %>
+                  </li>
+                <% end %>
+              </ul>
+            <% else %>
+              <p> No posts associated with this tag. </p>
+            <% end %>
+
+          </div>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+<% end %>
