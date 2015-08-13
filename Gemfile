@@ -15,6 +15,7 @@ gem 'acts-as-taggable-on'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'devise_invitable'
+gem 'puma'
 
 # Environment Dependencies
 group :development, :test do
