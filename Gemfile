@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'acts-as-taggable-on'
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'devise_invitable'
 
 # Environment Dependencies
 group :development, :test do
