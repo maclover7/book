@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   root "pages#home"
+
   devise_for :users, controllers: { invitations: 'devise/invitations', registrations: "registrations" }
+  scope "/admin" do
+    resources :users
+  end
+
   resources :posts
   resources :tags, only: [:index, :show]
   # The priority is based upon order of creation: first created -> highest priority.
